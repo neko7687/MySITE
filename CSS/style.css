@@ -126,6 +126,7 @@ body{
     font-weight: normal;
 }
 .contract_area input {
+    border-radius: 10px;
     margin: 10px 0;
     border: 2px solid #333;
     width: 350px;
@@ -133,6 +134,7 @@ body{
 }
 
 .contract_area textarea {
+    border-radius: 10px;
     margin: 10px 0;
     border: 2px solid #333;
     width: 350px;
@@ -140,6 +142,7 @@ body{
 }
 
 .contract_area button {
+    border-radius: 10px;
     padding: 10px;
     text-transform: uppercase;
     background: rgb(255, 255, 255);
