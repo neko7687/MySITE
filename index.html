@@ -19,13 +19,16 @@
             <ul class="menu">
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="#Home">Home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#about">About</a>
                 </li>
                 <li>
-                    <a href="https://hangouts.google.com/group/PpKXFm7eYho5imE49">Contract</a>
+                    <a href="#contract">Contract</a>
+                </li>
+                <li>
+                    <a href="#">Games</a>
                 </li>
 
             </ul>
@@ -48,7 +51,7 @@
             <div class="info1_area">
                 <img src="img/Me.png" alt="" height="300px" width=" 550px">
                 <div class="info1_text">
-                    <h1>Profile</h1>               
+                    <h1  id="about" >Profile</h1>               
                     <p>ชื่อ : นายปรียาทร    ไชยคำ       ชื่อเล่น : ปริน</p>
                     <p>อายุ : 18</p>
                     <p>งานอดิเรก : อ่านนิยายจีนกำลังภายใน, เล่นบาสเกตบอล</p>
@@ -78,7 +81,7 @@
     <section class="contract">
         <div class="container">
             <div class="contract_area">
-                <h1>Contract Me</h1>
+                <h1 id="contract">Contract Me</h1>
                 <form>
                     <label >Your Name</label><br>
                     <input type="text" placeholder="Your Name"><br>
@@ -88,7 +91,7 @@
                     <input type="text" placeholder="Your Job"><br>
                     <label >Your Message</label><br>
                     <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea><br>
-                    <button type="submit">Send</button>
+                    <button type="submit" onclick="alert('ยืนยันการส่งข้อมูล')">Send</button>
                 </form>
             </div>    
         </div>
