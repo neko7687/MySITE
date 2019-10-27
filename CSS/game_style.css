@@ -1,8 +1,26 @@
 body{
-    margin: 10;
+    background-image: url(https://www.cowcow.com/img/4-155739823-0-0-1);
+    margin: 0;
     font-family: 'Acme', sans-serif;
     font-family: 'Kanit', sans-serif;
 }
-.main {
-    text-align: center;
+.main p{
+    font-size: 24px;
+    color: red ;
+}
+.main h1{
+    text-shadow: 0.075em 0.075em purple;
+    color: rgb(255, 1, 1);
+}
+.footer a{
+    font-size: 48px;
+    text-decoration: none;
+    text-shadow: 0.075em 0.075em purple;
+    color: rgb(255, 1, 1);
+    padding-bottom: 15px;
+    transition: all 0.3s ease;
+}
+.footer a:hover{
+    border-bottom: 15px solid lime;
+    padding-bottom: 0px;
 }
