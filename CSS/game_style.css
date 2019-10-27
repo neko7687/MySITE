@@ -1,6 +1,8 @@
 body{
-    margin: 0;
-    padding: 0;
+    margin: 10;
     font-family: 'Acme', sans-serif;
     font-family: 'Kanit', sans-serif;
+}
+.main {
+    text-align: center;
 }

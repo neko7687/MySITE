@@ -1,13 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en">   
+<head> 
+    <center>    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>เกมงูดอทhtmlบวกjavascript</title>
     <link href="https://fonts.googleapis.com/css?family=Acme|Kanit:400,700&display=swap" rel="stylesheet">
-    <title>จับผิดภาพดอทhtml</title>
-    <link rel="stylesheet" href="CSS/game_style.css">
+    <link rel="stylesheet" href="CSS/game_style.css">  
 </head>
 <body>
-
+	<div>
+		<p>Score:&nbsp;</p>
+        <p id="score"></p>
+        <h1>กดลูกศรเพื่อเริ่ม</h1>
+	</div>
+    <canvas id="gc" width="400" height="400"></canvas>
 </body>
 </html>
+<script>
+	window.onload = function () {
+		canv = document.getElementById("gc");
+		ctx = canv.getContext("2d");
+		document.addEventListener("keydown", keyPush);
+		document.getElementById("score").innerHTML = 0; 
+		setInterval(game, 150); 
+	}
+	positionX = positionY = 10;
+	gs = tc = 20;
+	cherryX = cherryY = 15;	
+	xv = yv = 0;
+	trail = [];
+	tail = 1;
+	score = 0;
+	function game() {
+		positionX += xv;
+		positionY += yv;
+		if (positionX < 0) {
+			positionX = tc - 1;
+		}
+		if (positionX > tc - 1) {
+			positionX = 0;
+		}
+		if (positionY < 0) {
+			positionY = tc - 1;
+		}
+		if (positionY > tc - 1) {
+			positionY = 0;
+		}
+		ctx.fillStyle = "black";
+		ctx.fillRect(0, 0, canv.width, canv.height); 
+		ctx.fillStyle = "lime";
+		for (var i = 0; i < trail.length; i++) {
+			ctx.fillRect(trail[i].x * gs, trail[i].y * gs, gs - 2, gs - 2);
+			if (trail[i].x == positionX && trail[i].y == positionY) {
+				tail = 3;
+			}
+		}
+		trail.push({
+			x: positionX,
+			y: positionY
+		});
+		while (trail.length > tail) {
+			trail.shift();
+		}
+		if (cherryX == positionX && cherryY == positionY) {	
+			tail++;
+			document.getElementById("score").innerHTML = ++score; 
+			cherryX = Math.floor(Math.random() * tc);
+			cherryY = Math.floor(Math.random() * tc); 
+		}
+		ctx.fillStyle = "red";
+		ctx.fillRect(cherryX * gs, cherryY * gs, gs - 2, gs - 2);
+	}
+	function keyPush(evt) {
+		console.log(evt);
+		switch (evt.keyCode) {
+			case 37:
+				xv = -1;
+				yv = 0;
+				break;
+			case 38:
+				xv = 0;
+				yv = -1;
+				break;
+			case 39:
+				xv = 1;
+				yv = 0;
+				break;
+			case 40:
+				xv = 0;
+				yv = 1;
+				break;
+		}
+	}
+</script>
